@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { Header, Footer } from "@/components/storefront";
+
+export default function AccountPage() { return <><Header /><main className="mx-auto min-h-[65vh] max-w-[1100px] px-5 py-16 lg:py-24"><p className="eyebrow text-gold">Your account</p><h1 className="display mt-4 text-7xl">Welcome to<br /><i>your wardrobe.</i></h1><div className="mt-12 grid gap-4 sm:grid-cols-3">{[["Orders", "Track your fragrance orders", "/account/orders"], ["Addresses", "Manage delivery details", "/account/addresses"], ["Wishlist", "Your considered edit", "/wishlist"]].map(([title, text, href]) => <Link href={href} key={title} className="border border-black/15 p-7 transition hover:border-gold"><h2 className="display text-3xl">{title}</h2><p className="mt-3 text-sm text-muted">{text}</p><span className="mt-8 block text-[10px] font-bold uppercase tracking-[.15em] text-gold">Explore →</span></Link>)}</div></main><Footer /></>; }
